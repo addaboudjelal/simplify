@@ -3,6 +3,7 @@ import {Injectable} from '@angular/core';
 
 let JOBS = [
   {
+    'id': 1,
     'code':  'XPTD012',
     'title': 'Ibrance Emails',
     'emails': [
@@ -30,6 +31,7 @@ let JOBS = [
     ]
   },
   {
+    'id': 2,
     'code':  'LOTD015',
     'title': 'Pfizer Emails',
     'emails': [
@@ -57,6 +59,7 @@ let JOBS = [
     ]
   },
   {
+    'id': 3,
     'code':  'MDR0066',
     'title': 'Shrmas Emails',
     'emails': [
@@ -92,7 +95,7 @@ export class JobsService {
   getJobs(): any {
     return JOBS;
   }
-  getJob(num: String): any {
-    return JOBS[num + ''];
+  getJob(num: any): any {
+    return JOBS.filter( elem => elem.id === num);
   }
 }
