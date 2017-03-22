@@ -10,11 +10,15 @@ import {JobsService} from './jobs.service';
 })
 export class Detail implements OnInit {
   job: any;
-  constructor(private route: ActivatedRoute, private location: Location, private jobService: JobsService) {}
+  constructor(private route: ActivatedRoute, private location: Location, private jobService: JobsService) {
+    console.log('this Job:', this.job);
+  }
+
   ngOnInit(): void {
     console.log(this.route.params);
-    let tempo = this.route.params;
-    console.log(tempo);
+    this.route.params
+      .subscribe( params => this.job = +params['id']);
+    console.log('this Job:', this.job);
   }
   goBack(): void {
     this.location.back();
