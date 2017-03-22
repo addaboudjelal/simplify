@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>{{name}}</h1>
+  <button (click)="getJobs()">List Jobs</button>
+  <button (click)="getJob(1)">The One job</button>
+  <div class="list-group">
+    <a *ngFor="let job of jobList" class="list-group-item" (click)="onSelect(job)">
+      <span class="badge">{{job.code}}</span>
+      {{job.title}}
+    </a>
+  </div>
+</div>
