@@ -16,14 +16,13 @@ export class Jobs {
     this.jobList = this.getJobs();
   }
   getJobs(): void {
-    // console.log(this.db.getJobs());
     return this.db.getJobs();
   }
   getJob(num: String): void {
-    console.log(this.db.getJob(num));
+    return this.db.getJob(num);
   }
   onSelect(info: any): void {
-    console.log(info);
+    // console.log(info);
     this.router.navigate(['/detail', info.code]);
   }
 }

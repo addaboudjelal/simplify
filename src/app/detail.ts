@@ -16,9 +16,10 @@ export class Detail implements OnInit {
 
   ngOnInit(): void {
     console.log(this.route.params);
-    this.route.params
-      .subscribe( params => this.job = +params['id']);
-    console.log('this Job:', this.job);
+    const id = this.route.params.map( p => p.id);
+    const url = this.route.url.map( p => p.join(''));
+    console.log('This: ',id);
+    console.log('And : ',url['destination']._value[1].path);
   }
   goBack(): void {
     this.location.back();

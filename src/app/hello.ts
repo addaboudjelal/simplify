@@ -6,7 +6,7 @@ import {Component} from '@angular/core';
 })
 export class HelloComponent {
   public hello: string;
-
+  private dataBase: any;
   constructor() {
     this.hello = 'Hello World!';
   }
