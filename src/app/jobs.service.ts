@@ -1,7 +1,21 @@
 import {Injectable} from '@angular/core';
 // import {Headers, Http} from '@angular/http';
+interface IJobs {
+  'id': number;
+  'code': string;
+  'title': string;
+  'emails': IJob[];
+}
 
-let JOBS = [
+interface IJob {
+  'code': string;
+  'title': string;
+  'comment': string;
+  'version': string;
+  'container': string;
+}
+
+let JOBSLIST = [
   {
     'id': 1,
     'code':  'XPTD012',
@@ -93,9 +107,15 @@ export class JobsService {
   constructor() {}
 
   getJobs(): any {
-    return JOBS;
+    return JOBSLIST;
   }
-  getJob(num: any): any {
-    return JOBS.filter( elem => elem.id === num);
+  getJob(codenum: String): any {
+    return JOBSLIST.filter( elem => elem.code === codenum);
+  }
+  addJobs(obj: IJobs){
+    JOBSLIST.push(obj);
+  }
+  addJob(obj: IJob){
+    console.log('aDDing Job', obj);
   }
 }

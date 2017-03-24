@@ -9,17 +9,24 @@ import {JobsService} from './jobs.service';
   template: require('./detail.html')
 })
 export class Detail implements OnInit {
-  job: any;
+  public jobcode: any;
   constructor(private route: ActivatedRoute, private location: Location, private jobService: JobsService) {
-    console.log('this Job:', this.job);
+    this.getList();
+    // console.log('J',this.jobcode);
+
   }
 
   ngOnInit(): void {
-    console.log(this.route.params);
+    this.getList();
+  }
+  getList(): void {
+    // console.log(this.route.params);
     const id = this.route.params.map( p => p.id);
     const url = this.route.url.map( p => p.join(''));
-    console.log('This: ',id);
-    console.log('And : ',url['destination']._value[1].path);
+    // console.log('And : ',url['destination']._value[1].path);
+    let tempo = url['destination']._value[1].path;
+    this.jobcode = this.jobService.getJob(tempo)[0];
+    // console.log('D',this.jobcode);
   }
   goBack(): void {
     this.location.back();
