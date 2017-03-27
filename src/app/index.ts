@@ -7,6 +7,7 @@ import {Jobs} from './jobs';
 import {Detail} from './detail';
 import {JobsService} from './jobs.service';
 
+
 @NgModule({
   imports: [
     BrowserModule,

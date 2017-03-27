@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 export class Jobs {
   public name: string;
   public jobList: any;
+  public user: any;
 
   constructor(private db: JobsService, private router: Router) {
     this.name = 'Jobs List';
@@ -20,6 +21,9 @@ export class Jobs {
   }
   getJob(num: String): void {
     return this.db.getJob(num);
+  }
+  addJob(hero: any): void {
+    console.log('From:', hero);
   }
   onSelect(info: any): void {
     // console.log(info);

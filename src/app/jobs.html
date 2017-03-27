@@ -2,19 +2,26 @@
   <h1>{{name}}</h1>
   <button (click)="getJobs()">List Jobs</button>
   <button (click)="getJob(1)">The One job</button>
+
   <form class="form-horizontal">
     <fieldset>
       <legend>Add New Project</legend>
       <div class="form-group">
         <label class="col-lg-2 control-label">Email</label>
         <div class="col-lg-10">
-          <input type="text" class="form-control" placeholder="Email"/>
+          <input type="text" name="name" class="form-control" placeholder="Email"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-2 control-label">Title</label>
+        <div class="col-lg-10">
+          <input type="text" name="name" class="form-control" placeholder="Title"/>
         </div>
       </div>
       <div class="form-group">
         <div class="col-lg-10 col-lg-offset-2">
           <button class="btn btn-default">Cancel</button>
-          <button class="btn btn-primary">Submit</button>
+          <button type="submit" (click)="addJob()" class="btn btn-primary">Submit</button>
         </div>
       </div>
     </fieldset>
