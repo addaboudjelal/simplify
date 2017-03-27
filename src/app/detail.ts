@@ -10,9 +10,10 @@ import {JobsService} from './jobs.service';
 })
 export class Detail implements OnInit {
   public jobcode: any;
+  public bool: boolean;
   constructor(private route: ActivatedRoute, private location: Location, private jobService: JobsService) {
     this.getList();
-    // console.log('J',this.jobcode);
+    this.bool = false;
 
   }
 
@@ -33,5 +34,6 @@ export class Detail implements OnInit {
   }
   addEmail(): void {
     console.log('adding');
+    !this.bool;
   }
 }
