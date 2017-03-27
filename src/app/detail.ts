@@ -31,4 +31,7 @@ export class Detail implements OnInit {
   goBack(): void {
     this.location.back();
   }
+  addEmail(): void {
+    console.log('adding');
+  }
 }

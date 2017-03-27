@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {JobsService} from './jobs.service';
 import {Router} from '@angular/router';
+import {IJobs} from './IJobs.interface';
 
 @Component({
   selector: 'fountain-jobs',
@@ -10,7 +11,7 @@ import {Router} from '@angular/router';
 export class Jobs {
   public name: string;
   public jobList: any;
-  public user: any;
+  public user: IJobs;
 
   constructor(private db: JobsService, private router: Router) {
     this.name = 'Jobs List';
@@ -21,9 +22,6 @@ export class Jobs {
   }
   getJob(num: String): void {
     return this.db.getJob(num);
-  }
-  addJob(hero: any): void {
-    console.log('From:', hero);
   }
   onSelect(info: any): void {
     // console.log(info);

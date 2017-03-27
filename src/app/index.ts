@@ -6,18 +6,21 @@ import {HelloComponent} from './hello';
 import {Jobs} from './jobs';
 import {Detail} from './detail';
 import {JobsService} from './jobs.service';
-
+import {ProjectForm} from './projectform';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
     BrowserModule,
-    routing
+    routing,
+    ReactiveFormsModule
   ],
   declarations: [
     RootComponent,
     HelloComponent,
     Jobs,
-    Detail
+    Detail,
+    ProjectForm
   ],
   providers: [JobsService],
   bootstrap: [RootComponent]

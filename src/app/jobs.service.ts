@@ -112,10 +112,10 @@ export class JobsService {
   getJob(codenum: String): any {
     return JOBSLIST.filter( elem => elem.code === codenum);
   }
-  addJobs(obj: IJobs){
+  addJobs(obj: IJobs) {
     JOBSLIST.push(obj);
   }
-  addJob(obj: IJob){
+  addJob(obj: IJob) {
     console.log('aDDing Job', obj);
   }
 }
