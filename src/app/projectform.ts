@@ -10,7 +10,7 @@ import {IJobs} from './IJobs.interface';
 
 export class ProjectForm implements OnInit {
   registerForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private db:JobsService) {}
+  constructor(private formBuilder: FormBuilder, private db: JobsService) {}
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -19,10 +19,12 @@ export class ProjectForm implements OnInit {
     });
   }
 
-  addJob({ value, valid}: {value:any, valid:boolean}) {
+  addJob({ value, valid }: {value: any, valid: boolean}) {
     console.log('Click:', value,valid);
-    this.db.addJobs({id: 10, code: value.code, title: value.name, emails: []});
-    this.ngOnInit();
+    if(value.code !== ''){
+      this.db.addJobs({id: 10, code: value.code, title: value.name, emails: []});
+      this.ngOnInit();
+    }
   }
   clearField() {
     this.ngOnInit();

@@ -13,6 +13,7 @@
   <h3>This</h3>
   </div>
 </div>
-<button (click)="addEmail()">Add New Email</button>
+<add-email *ngIf="visible" [master]="master" (hideAddEmail)="addEmail()" ></add-email>
+<button *ngIf="!visible" (click)="visible = !visible">New Email</button>
 
 </div>

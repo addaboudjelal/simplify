@@ -10,10 +10,10 @@ import {JobsService} from './jobs.service';
 })
 export class Detail implements OnInit {
   public jobcode: any;
-  public bool: boolean;
+  public master: string = "Parent to child";
+  public visible: boolean = false;
   constructor(private route: ActivatedRoute, private location: Location, private jobService: JobsService) {
     this.getList();
-    this.bool = false;
 
   }
 
@@ -33,7 +33,8 @@ export class Detail implements OnInit {
     this.location.back();
   }
   addEmail(): void {
-    console.log('adding');
-    !this.bool;
+    console.log('Parent adding');
+    this.visible = !this.visible;
+
   }
 }

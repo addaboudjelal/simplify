@@ -8,6 +8,8 @@ import {Detail} from './detail';
 import {JobsService} from './jobs.service';
 import {ProjectForm} from './projectform';
 import {ReactiveFormsModule} from '@angular/forms';
+import {trigger, state, style, animate,transition} from '@angular/animations';
+import {AddEmail} from './addemail';
 
 @NgModule({
   imports: [
@@ -20,7 +22,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     HelloComponent,
     Jobs,
     Detail,
-    ProjectForm
+    ProjectForm,
+    AddEmail
   ],
   providers: [JobsService],
   bootstrap: [RootComponent]
