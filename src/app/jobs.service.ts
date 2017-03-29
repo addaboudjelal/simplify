@@ -115,7 +115,7 @@ export class JobsService {
   addJobs(obj: IJobs) {
     JOBSLIST.push(obj);
   }
-  addJob(obj: IJob) {
+  addJob(obj: any) {
     console.log('aDDing Job', obj);
   }
 }

@@ -21,10 +21,10 @@ export class AddEmail implements OnInit {
   }
   addJob({ value, valid }: {value: any, valid: boolean}) {
     console.log('Click:', value,valid);
-    // if(value.code !== ''){
-    //   this.db.addJobs({id: 10, code: value.code, title: value.name, emails: []});
-    //   this.ngOnInit();
-    // }
+    if(value.code !== ''){
+      this.db.addJob({code: value.code, title: value.name, comment: 'aussi', version: 0, container: 'test'});
+      this.ngOnInit();
+    }
   }
   addSubEmail(): void {
     console.log('adding Email to db');
