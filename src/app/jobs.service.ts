@@ -119,8 +119,8 @@ export class JobsService {
     console.log('aDDing Job', obj, '|', version);
     // let tempo = this.getJob(version);
     // tempo.emails.push(obj);
-    JOBSLIST.forEach(function(elem){
-      if(elem.code === version){
+    JOBSLIST.forEach(function (elem: IJobs) {
+      if (elem.code === version) {
         elem.emails.push(obj);
       }
     });

@@ -20,8 +20,8 @@ export class ProjectForm implements OnInit {
   }
 
   addJob({ value, valid }: {value: any, valid: boolean}) {
-    console.log('Click:', value,valid);
-    if(value.code !== ''){
+    console.log ('Click:', value, valid);
+    if (value.code !== '') {
       this.db.addJobs({id: 10, code: value.code, title: value.name, emails: []});
       this.ngOnInit();
     }

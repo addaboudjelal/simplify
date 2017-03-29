@@ -10,7 +10,7 @@ import {JobsService} from './jobs.service';
 })
 export class Detail implements OnInit {
   public jobcode: any;
-  public master: string = "Parent to child";
+  public master: string = 'Parent to child';
   public visible: boolean = false;
   constructor(private route: ActivatedRoute, private location: Location, private jobService: JobsService) {
     this.getList();
@@ -25,7 +25,7 @@ export class Detail implements OnInit {
     const id = this.route.params.map( p => p.id);
     const url = this.route.url.map( p => p.join(''));
     // console.log('And : ',url['destination']._value[1].path);
-    let tempo = url['destination']._value[1].path;
+    let tempo: string = url['destination']._value[1].path;
     this.jobcode = this.jobService.getJob(tempo)[0];
     // console.log('D',this.jobcode);
     this.master = tempo;

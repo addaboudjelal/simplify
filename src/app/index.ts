@@ -8,7 +8,7 @@ import {Detail} from './detail';
 import {JobsService} from './jobs.service';
 import {ProjectForm} from './projectform';
 import {ReactiveFormsModule} from '@angular/forms';
-import {trigger, state, style, animate,transition} from '@angular/animations';
+import {trigger, state, style, animate, transition} from '@angular/animations';
 import {AddEmail} from './addemail';
 
 @NgModule({

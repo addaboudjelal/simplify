@@ -1,5 +1,5 @@
 import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
-import {trigger, state, style, animate,transition} from '@angular/animations';
+import {trigger, state, style, animate, transition} from '@angular/animations';
 import { FormGroup, FormBuilder} from '@angular/forms';
 import {JobsService} from './jobs.service';
 
@@ -10,7 +10,7 @@ import {JobsService} from './jobs.service';
 
 export class AddEmail implements OnInit {
   registerForm: FormGroup;
-  @Input() master:string;
+  @Input() master: string;
   @Output() hideAddEmail = new EventEmitter<any>();
   constructor(private formBuilder: FormBuilder, private db: JobsService) {}
   ngOnInit() {
@@ -20,8 +20,8 @@ export class AddEmail implements OnInit {
     });
   }
   addJob({ value, valid }: {value: any, valid: boolean}) {
-    console.log('Click:', value,valid);
-    if(value.code !== ''){
+    console.log ('Click:', value, valid);
+    if (value.code !== '') {
       this.db.addJob({code: value.code, title: value.name, comment: 'this comment', version: '12', container: 'lalalala'}, this.master);
       this.ngOnInit();
     }
