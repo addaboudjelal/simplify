@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import { FormGroup, FormBuilder} from '@angular/forms';
-import {JobsService} from './jobs.service';
+import {JobsService} from './service/jobs.service';
 import {IJobs} from './interface/ijobs.interface';
 
 @Component({
   selector: 'create-project',
-  template: require('./projectform.html')
+  template: require('./pages/projectform.html')
 })
 
 export class ProjectForm implements OnInit {

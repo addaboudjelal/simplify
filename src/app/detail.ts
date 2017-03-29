@@ -2,11 +2,11 @@ import 'rxjs/add/operator/switchMap';
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
 import {Location} from '@angular/common';
-import {JobsService} from './jobs.service';
+import {JobsService} from './service/jobs.service';
 
 @Component ({
   selector: 'my-detail',
-  template: require('./detail.html')
+  template: require('./pages/detail.html')
 })
 export class Detail implements OnInit {
   public jobcode: any;

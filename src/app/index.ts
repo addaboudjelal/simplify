@@ -5,7 +5,7 @@ import {routing, RootComponent} from './routes';
 import {HelloComponent} from './hello';
 import {Jobs} from './jobs';
 import {Detail} from './detail';
-import {JobsService} from './jobs.service';
+import {JobsService} from './service/jobs.service';
 import {ProjectForm} from './projectform';
 import {ReactiveFormsModule} from '@angular/forms';
 import {trigger, state, style, animate, transition} from '@angular/animations';

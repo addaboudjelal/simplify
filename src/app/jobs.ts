@@ -1,11 +1,11 @@
 import {Component} from '@angular/core';
-import {JobsService} from './jobs.service';
+import {JobsService} from './service/jobs.service';
 import {Router} from '@angular/router';
-import {IJobs} from './IJobs.interface';
+import {IJobs} from './interface/ijobs.interface';
 
 @Component({
   selector: 'fountain-jobs',
-  template: require('./jobs.html')
+  template: require('./pages/jobs.html')
 })
 
 export class Jobs {

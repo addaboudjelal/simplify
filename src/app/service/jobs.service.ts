@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {IJobs, IJob} from './interface/ijobs.interface';
+import {IJobs, IJob} from '../interface/ijobs.interface';
 // import {Headers, Http} from '@angular/http';
 
 let JOBSLIST = [

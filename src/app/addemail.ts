@@ -1,11 +1,11 @@
 import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
 import {trigger, state, style, animate, transition} from '@angular/animations';
 import { FormGroup, FormBuilder} from '@angular/forms';
-import {JobsService} from './jobs.service';
+import {JobsService} from './service/jobs.service';
 
 @Component({
   selector: 'add-email',
-  template: require('./addemail.html')
+  template: require('./pages/addemail.html')
 })
 
 export class AddEmail implements OnInit {
