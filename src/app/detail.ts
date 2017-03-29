@@ -28,6 +28,7 @@ export class Detail implements OnInit {
     let tempo = url['destination']._value[1].path;
     this.jobcode = this.jobService.getJob(tempo)[0];
     // console.log('D',this.jobcode);
+    this.master = tempo;
   }
   goBack(): void {
     this.location.back();
