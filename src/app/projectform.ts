@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { FormGroup, FormBuilder} from '@angular/forms';
 import {JobsService} from './jobs.service';
-import {IJobs} from './IJobs.interface';
+import {IJobs} from './interface/ijobs.interface';
 
 @Component({
   selector: 'create-project',

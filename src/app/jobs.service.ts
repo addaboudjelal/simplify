@@ -1,19 +1,6 @@
 import {Injectable} from '@angular/core';
+import {IJobs, IJob} from './interface/ijobs.interface';
 // import {Headers, Http} from '@angular/http';
-interface IJobs {
-  'id': number;
-  'code': string;
-  'title': string;
-  'emails': IJob[];
-}
-
-interface IJob {
-  'code': string;
-  'title': string;
-  'comment': string;
-  'version': string;
-  'container': string;
-}
 
 let JOBSLIST = [
   {
@@ -101,24 +88,24 @@ let JOBSLIST = [
     ]
   },
 ];
+
 @Injectable()
 export class JobsService {
-  // private headers = new Headers({'Content-Type': 'application/json'});
   constructor() {}
 
   getJobs(): any {
     return JOBSLIST;
   }
+
   getJob(codenum: String): any {
     return JOBSLIST.filter( elem => elem.code === codenum);
   }
+
   addJobs(obj: IJobs) {
     JOBSLIST.push(obj);
   }
+
   addJob(obj: IJob, version: string) {
-    console.log('aDDing Job', obj, '|', version);
-    // let tempo = this.getJob(version);
-    // tempo.emails.push(obj);
     JOBSLIST.forEach(function (elem: IJobs) {
       if (elem.code === version) {
         elem.emails.push(obj);

@@ -5,3 +5,9 @@ export interface IJob {
   'version': string;
   'container': string;
 }
+export interface IJobs {
+  'id': number;
+  'code': string;
+  'title': string;
+  'emails': IJob[];
+}
