@@ -6,7 +6,7 @@ import {Detail} from './detail';
 
 @Component({
   selector: 'fountain-root',
-  template: '<router-outlet></router-outlet>'
+  template: require('./pages/index.html')
 })
 export class RootComponent {}
 
@@ -20,7 +20,7 @@ export const routes: Routes = [
     component: HelloComponent
   },
   {
-    path: 'detail/:id',
+    path: 'project/:id',
     component: Detail
   }
 ];

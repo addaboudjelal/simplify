@@ -25,6 +25,6 @@ export class Jobs {
   }
   onSelect(info: any): void {
     // console.log(info);
-    this.router.navigate(['/detail', info.code]);
+    this.router.navigate(['/project', info.code]);
   }
 }
