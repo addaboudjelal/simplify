@@ -3,6 +3,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
 import {Location} from '@angular/common';
 import {JobsService} from './service/jobs.service';
+import {Router} from '@angular/router';
 
 @Component ({
   selector: 'my-detail',
@@ -12,7 +13,7 @@ export class Detail implements OnInit {
   public jobcode: any;
   public master: string = 'Parent to child';
   public visible: boolean = false;
-  constructor(private route: ActivatedRoute, private location: Location, private jobService: JobsService) {
+  constructor(private route: ActivatedRoute, private location: Location, private jobService: JobsService, private router: Router) {
     this.getList();
   }
   ngOnInit(): void {
@@ -37,5 +38,6 @@ export class Detail implements OnInit {
   }
   onCode(data: string): void {
     console.log('open: ', data);
+    this.router.navigate(['/email', data]);
   }
 }

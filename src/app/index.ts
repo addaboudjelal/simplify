@@ -9,12 +9,14 @@ import {JobsService} from './service/jobs.service';
 import {ProjectForm} from './projectform';
 import {ReactiveFormsModule} from '@angular/forms';
 import {AddEmail} from './addemail';
+import {AceEditorModule } from 'ng2-ace-editor';
 
 @NgModule({
   imports: [
     BrowserModule,
     routing,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AceEditorModule
   ],
   declarations: [
     RootComponent,

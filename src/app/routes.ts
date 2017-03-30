@@ -16,7 +16,7 @@ export const routes: Routes = [
     component: Jobs
   },
   {
-    path: 'json',
+    path: 'email/:id',
     component: HelloComponent
   },
   {
