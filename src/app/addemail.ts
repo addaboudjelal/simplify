@@ -1,5 +1,4 @@
 import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
-import {trigger, state, style, animate, transition} from '@angular/animations';
 import { FormGroup, FormBuilder} from '@angular/forms';
 import {JobsService} from './service/jobs.service';
 

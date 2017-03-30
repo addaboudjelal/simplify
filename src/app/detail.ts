@@ -14,9 +14,7 @@ export class Detail implements OnInit {
   public visible: boolean = false;
   constructor(private route: ActivatedRoute, private location: Location, private jobService: JobsService) {
     this.getList();
-
   }
-
   ngOnInit(): void {
     this.getList();
   }
@@ -34,8 +32,10 @@ export class Detail implements OnInit {
     this.location.back();
   }
   addEmail(): void {
-    console.log('Parent adding');
+    // console.log('Parent adding');
     this.visible = !this.visible;
-
+  }
+  onCode(data: string): void {
+    console.log('open: ', data);
   }
 }
