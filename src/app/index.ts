@@ -9,14 +9,15 @@ import {JobsService} from './service/jobs.service';
 import {ProjectForm} from './projectform';
 import {ReactiveFormsModule} from '@angular/forms';
 import {AddEmail} from './addemail';
-import {AceEditorModule } from 'ng2-ace-editor';
+// import {AceEditorModule } from 'ng2-ace-editor';
+import {myFirstDirective} from './directive/myFirst.directive';
 
 @NgModule({
   imports: [
     BrowserModule,
     routing,
-    ReactiveFormsModule,
-    AceEditorModule
+    ReactiveFormsModule
+    // AceEditorModule
   ],
   declarations: [
     RootComponent,
@@ -24,7 +25,8 @@ import {AceEditorModule } from 'ng2-ace-editor';
     Jobs,
     Detail,
     ProjectForm,
-    AddEmail
+    AddEmail,
+    myFirstDirective
   ],
   providers: [JobsService],
   bootstrap: [RootComponent]
