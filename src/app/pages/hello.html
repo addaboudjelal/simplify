@@ -1,11 +1,21 @@
-<div class="container" >
-  <div class="row">
-    <div class="col-md-2">
-
+<div class="container-fluid" >
+  <div class="row-fluid">
+    <div class="col-md-2" style="margin-top: 5%;">
+      <div class="list-group">
+        <a *ngFor="let archive of archives" class="list-group-item" (click)="onSelect(archive)" >
+          {{archive.date}} | {{archive.time}} | {{archive.version}}
+        </a>
+      </div>
     </div>
     <div class="col-md-8">
         <div [innerHTML]="evitTitle"></div>
-        <p myFirst>Color This</p>
+        <p myFirst Drag>Color This</p>
+        <iframe *ngIf="bool" [src]="url" width="100%" height="100%"></iframe>
+        <div *ngIf="!bool" class="container">
+          <h1>Edit</h1>
+        </div>
+        <button *ngIf="!bool" (click)="bool = !bool" type="button" name="button" class="float-right">Preview</button>
+        <button *ngIf="bool" (click)="bool = !bool" type="button" name="button" class="float-right">Edit</button>
     </div>
     <div class="col-md-2">
 

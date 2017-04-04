@@ -91,6 +91,15 @@ let JOBSLIST = [
 
 @Injectable()
 export class JobsService {
+  private static instance: JobsService;
+
+  static get Instance(): JobsService {
+    if (this.instance === null || this.instance === undefined) {
+      this.instance = new JobsService();
+    }
+    return this.instance;
+  }
+
   constructor() {}
 
   getJobs(): any {

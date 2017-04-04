@@ -6,6 +6,7 @@
     "removeComments": false,
     "noImplicitAny": false,
     "typeRoots": ["node_modules/@types/"],
+    "target": "es5",
     "types": [
       "node",
       "jasmine",

@@ -11,6 +11,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {AddEmail} from './addemail';
 // import {AceEditorModule } from 'ng2-ace-editor';
 import {myFirstDirective} from './directive/myFirst.directive';
+import {Drag} from './directive/drag.directive';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import {myFirstDirective} from './directive/myFirst.directive';
     Detail,
     ProjectForm,
     AddEmail,
-    myFirstDirective
+    myFirstDirective,
+    Drag
   ],
   providers: [JobsService],
   bootstrap: [RootComponent]
