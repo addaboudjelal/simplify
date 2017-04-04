@@ -7,7 +7,8 @@ let ARCHIVES = [
     'time': '09:45',
     'version': '0.20',
     'content': [],
-    'preview': 'email001.html'
+    'preview': 'email001.html',
+    'edit': '<h1>First We see if we can add</h1><p>What ever we need to add</p><div [innerHTML]="evitTitle"></div>'
   },
   {
     'date': '02/20/2017',
@@ -42,6 +43,7 @@ export class HelloComponent {
   public archives: any;
   private url: SafeResourceUrl;
   private bool: boolean = true;
+  private walou: string;
   constructor(private sanitizer: DomSanitizer) {
     this.hello = 'Hello World!';
     this.archives = this.getArchives();
@@ -53,6 +55,7 @@ export class HelloComponent {
   onSelect(data: any): void {
     console.log('Archive: \n/', data);
     this.sendUrl(data.preview);
+    this.walou = data.edit;
 
   }
   sendUrl(link: string): void {
