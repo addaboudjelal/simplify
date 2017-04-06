@@ -12,10 +12,11 @@ export class Drag {
     let el = this.el.nativeElement;
     el.draggable = true;
 
-    el.addEventListener('dragstart', (e) => {
+    el.addEventListener('dragstart', (pEvt) => {
       console.log('Drag start');
-      // el.dataTransfer.effectAllowed = 'move';
-      // e.dataTransfer.setData('text/plain',e.target.id);
+      pEvt.dataTransfer.effectAllowed = 'move';
+      pEvt.dataTransfer.setData('text/plain',pEvt.target.id);
+      console.log(pEvt.dataTransfer);
     });
     el.addEventListener('dragend', (e) => { console.log('Drag End');});
   }

@@ -8,7 +8,7 @@ let ARCHIVES = [
     'version': '0.20',
     'content': [],
     'preview': 'email001.html',
-    'edit': '<h1>First We see if we can add</h1><p>What ever we need to add</p><div></div>'
+    'edit': ''
   },
   {
     'date': '02/20/2017',
@@ -76,7 +76,7 @@ export class HelloComponent {
   onSelect(data: any): void {
     console.log('Archive: \n/', data);
     this.sendUrl(data.preview);
-    this.walou = data.edit;
+    //this.walou = data.edit;
 
   }
   sendUrl(link: string): void {
