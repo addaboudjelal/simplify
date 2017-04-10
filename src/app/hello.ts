@@ -60,6 +60,7 @@ export class HelloComponent {
   private url: SafeResourceUrl;
   private bool: boolean = true;
   private walou: string;
+  public simpleDrop: any = null;
 
   constructor(private sanitizer: DomSanitizer) {
     this.hello = 'Hello World!';

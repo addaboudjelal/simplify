@@ -8,9 +8,13 @@
       </div>
     </div>
     <div class="col-md-8">
+        <div class="list-group" dnd-droppable (onDropSuccess)="simpleDrop=$event" >
+          <h1>Place to Drop</h1>
+          <div *ngIf="simpleDrop">Item was dropped here</div>
+        </div>
         <!-- <div [innerHTML]="evitTitle"></div>
         <p myFirst Drag>Color This</p> -->
-        <iframe *ngIf="bool" [src]="url" width="100%" height="400px" style="border: 2px solid red;"></iframe>
+        <iframe *ngIf="bool"  [src]="url" width="100%" height="400px" style="border: 2px solid red;"></iframe>
         <iframe *ngIf="!bool" [src]="url" width="100%" height="400px" style="border: 2px dashed green;"></iframe>
 
         <button *ngIf="!bool" (click)="bool = !bool" type="button" name="button" class="float-right">Preview</button>
@@ -18,7 +22,7 @@
     </div>
     <div class="col-md-2" style="margin-top: 5%;">
       <div class="list-group">
-        <a *ngFor="let comp of composants" class="list-group-item">
+        <a *ngFor="let comp of composants" dnd-draggable [dragEnabled]="true" class="list-group-item">
           {{comp.name}} | {{comp.link}}
         </a>
       </div>

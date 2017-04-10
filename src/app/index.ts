@@ -13,12 +13,14 @@ import {AddEmail} from './addemail';
 import {myFirstDirective} from './directive/myFirst.directive';
 // import {Drag} from './directive/drag.directive';
 // import {Drop} from './directive/drop.directive';
+import {DndModule} from 'ng2-dnd';
 
 @NgModule({
   imports: [
     BrowserModule,
     routing,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DndModule.forRoot()
     // AceEditorModule
   ],
   declarations: [
