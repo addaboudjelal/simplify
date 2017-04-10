@@ -1,12 +1,16 @@
 import {Injectable} from '@angular/core';
 
-let TEMPLATEMAILS = [
-  {}
-];
 
 @Injectable()
 export class TemplateEmail {
+  private emailStructure: any;
   constructor() {
 
+  }
+  structure(): any {
+    return this.emailStructure;
+  }
+  distructure(value: any): void {
+    this.emailStructure += value;
   }
 }

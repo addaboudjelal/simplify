@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
+import {TemplateEmail} from './service/template.service';
 
 let ARCHIVES = [
   {
@@ -57,16 +58,27 @@ export class HelloComponent {
   public evitTitle = '<h1>Test</h1>';
   public archives: any;
   public composants: any;
+  public simpleDrop: any = null;
   private url: SafeResourceUrl;
+
   private bool: boolean = true;
   private walou: string;
-  public simpleDrop: any = null;
 
-  constructor(private sanitizer: DomSanitizer) {
+  private receivedData: Array<any> = [];
+  private completeEmail: any;
+
+  constructor(private sanitizer: DomSanitizer, private emailStructure: TemplateEmail) {
     this.hello = 'Hello World!';
     this.archives = this.getArchives();
     this.composants = this.getComposant();
     this.sendUrl('');
+
+  }
+  transferDataSuccess($event: any) {
+    this.receivedData.push($event.dragData);
+    this.emailStructure.distructure($event.dragData);
+    this.completeEmail = this.emailStructure.structure();
+
   }
   getArchives(): any {
     return ARCHIVES;

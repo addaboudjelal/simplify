@@ -14,6 +14,7 @@ import {myFirstDirective} from './directive/myFirst.directive';
 // import {Drag} from './directive/drag.directive';
 // import {Drop} from './directive/drop.directive';
 import {DndModule} from 'ng2-dnd';
+import {TemplateEmail} from './service/template.service';
 
 @NgModule({
   imports: [
@@ -32,7 +33,7 @@ import {DndModule} from 'ng2-dnd';
     AddEmail,
     myFirstDirective,
   ],
-  providers: [JobsService],
+  providers: [JobsService,TemplateEmail],
   bootstrap: [RootComponent]
 })
 export class AppModule {}
