@@ -9,7 +9,7 @@ import {JobsService} from './service/jobs.service';
 import {ProjectForm} from './projectform';
 import {ReactiveFormsModule} from '@angular/forms';
 import {AddEmail} from './addemail';
-// import {AceEditorModule } from 'ng2-ace-editor';
+import {AceEditorModule } from 'ng2-ace-editor';
 import {myFirstDirective} from './directive/myFirst.directive';
 // import {Drag} from './directive/drag.directive';
 // import {Drop} from './directive/drop.directive';
@@ -21,8 +21,8 @@ import {TemplateEmail} from './service/template.service';
     BrowserModule,
     routing,
     ReactiveFormsModule,
-    DndModule.forRoot()
-    // AceEditorModule
+    DndModule.forRoot(),
+    AceEditorModule
   ],
   declarations: [
     RootComponent,

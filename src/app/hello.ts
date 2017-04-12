@@ -63,6 +63,7 @@ export class HelloComponent {
 
   private bool: boolean = true;
   private walou: string;
+  private text:string = "ici";
 
   private receivedData: Array<any> = [];
   private completeEmail: any;
