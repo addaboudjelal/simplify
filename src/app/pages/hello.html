@@ -17,7 +17,7 @@
         <p myFirst Drag>Color This</p> -->
         <!-- <iframe *ngIf="bool"  [src]="url" width="100%" height="400px" style="border: 2px solid red;"></iframe> -->
         <div *ngIf="!bool" ace-editor [(text)]="text" style="width: 100%; height: 400px;"></div>
-        <object *ngIf="bool" [innerHTML]="text" width="100%" height="400px" style="border: 2px dashed green;"></object>
+        <iframe *ngIf="bool" [src]="url" width="100%" height="400px" style="border: 2px dashed green;"></iframe>
 
         <button *ngIf="!bool" (click)="bool = !bool" type="button" name="button" class="float-right">Preview</button>
         <button *ngIf="bool" (click)="bool = !bool" type="button" name="button" class="float-right">Edit</button>
