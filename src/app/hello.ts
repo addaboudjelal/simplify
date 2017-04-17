@@ -51,7 +51,8 @@ let COMPOSANT = [
 
 @Component({
   selector: 'fountain-app',
-  template: require('./pages/hello.html')
+  template: require('./pages/hello.html'),
+  styleUrls: ['./app/css/email.css']
 })
 export class HelloComponent {
   public hello: string;
