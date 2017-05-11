@@ -35,7 +35,7 @@ import {HttpModule} from '@angular/http';
     AddEmail,
     myFirstDirective,
   ],
-  providers: [JobsService,TemplateEmail],
+  providers: [JobsService, TemplateEmail],
   bootstrap: [RootComponent]
 })
 export class AppModule {}

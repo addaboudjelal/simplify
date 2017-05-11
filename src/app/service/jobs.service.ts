@@ -94,7 +94,7 @@ let JOBSLIST = [
 export class JobsService {
 
   constructor(private http: Http) {
-    console.log('JSON FILE: \n',this.getJson());
+    console.log('JSON FILE: \n', this.getJson());
   }
 
   getJson() {
