@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {IJobs, IJob} from '../interface/ijobs.interface';
-// import {Headers, Http} from '@angular/http';
+import {Http, Response} from '@angular/http';
+import 'rxjs/add/operator/map';
 
 let JOBSLIST = [
   {
@@ -91,16 +92,14 @@ let JOBSLIST = [
 
 @Injectable()
 export class JobsService {
-  private static instance: JobsService;
 
-  static get Instance(): JobsService {
-    if (this.instance === null || this.instance === undefined) {
-      this.instance = new JobsService();
-    }
-    return this.instance;
+  constructor(private http: Http) {
+    console.log('JSON FILE: \n', this.getJson());
   }
 
-  constructor() {}
+  getJson() {
+    return this.http.get('./app/json/db.json').map((res: Response) => res.json().data);
+  }
 
   getJobs(): any {
     return JOBSLIST;

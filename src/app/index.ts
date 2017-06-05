@@ -15,6 +15,7 @@ import {myFirstDirective} from './directive/myFirst.directive';
 // import {Drop} from './directive/drop.directive';
 import {DndModule} from 'ng2-dnd';
 import {TemplateEmail} from './service/template.service';
+import {HttpModule} from '@angular/http';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import {TemplateEmail} from './service/template.service';
     routing,
     ReactiveFormsModule,
     DndModule.forRoot(),
-    AceEditorModule
+    AceEditorModule,
+    HttpModule
   ],
   declarations: [
     RootComponent,
@@ -33,7 +35,7 @@ import {TemplateEmail} from './service/template.service';
     AddEmail,
     myFirstDirective,
   ],
-  providers: [JobsService,TemplateEmail],
+  providers: [JobsService, TemplateEmail],
   bootstrap: [RootComponent]
 })
 export class AppModule {}
