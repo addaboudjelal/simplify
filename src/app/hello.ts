@@ -2,6 +2,8 @@ import {Component} from '@angular/core';
 import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 import {TemplateEmail} from './service/template.service';
 
+
+
 let ARCHIVES = [
   {
     'date': '02/20/2017',
@@ -64,7 +66,7 @@ export class HelloComponent {
 
   private bool: boolean = true;
   private walou: string;
-  private text:string = "ici";
+  private text:string = "";
 
   private receivedData: Array<any> = [];
   private completeEmail: any;
@@ -74,6 +76,7 @@ export class HelloComponent {
     this.archives = this.getArchives();
     this.composants = this.getComposant();
     this.sendUrl('');
+    this.text = ''+this.getFileContent('canvas.html');
 
   }
   transferDataSuccess($event: any) {
@@ -81,6 +84,28 @@ export class HelloComponent {
     this.emailStructure.distructure($event.dragData);
     this.completeEmail = this.emailStructure.structure();
 
+    this.aceContain(this.getFileContent($event.dragData));
+  }
+  aceContain(text: String): void{
+    this.text += text;
+  }
+  getFileContent(file: String): String{
+    var rawFile = new XMLHttpRequest();
+    var link = './app/template/'+file;
+    var allText = '';
+    rawFile.open("GET", link, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                allText = rawFile.responseText;
+            }
+        }
+    }
+    rawFile.send(null);
+    return (allText);
   }
   getArchives(): any {
     return ARCHIVES;

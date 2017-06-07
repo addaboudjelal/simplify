@@ -16,7 +16,7 @@
         <!-- <div [innerHTML]="evitTitle"></div>
         <p myFirst Drag>Color This</p> -->
         <!-- <iframe *ngIf="bool"  [src]="url" width="100%" height="400px" style="border: 2px solid red;"></iframe> -->
-        <div *ngIf="!bool" ace-editor [(text)]="text" style="width: 100%; height: 400px;"></div>
+        <div *ngIf="!bool" ace-editor [(text)]="text" style="width: 100%; height: 400px;" [theme]="'GitHub'"></div>
         <iframe *ngIf="bool" [srcdoc]="text"  width="100%" height="400px" style="border: 2px dashed green;"></iframe>
         <!-- <div *ngIf="bool" [innerHTML]="text" width="100%" height="400px" style="border: 2px dashed green;"></div> -->
 
