@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class TemplateEmail {
-  private emailStructure: any;
+  private emailStructure: any = '.start.';
   constructor() {
 
   }

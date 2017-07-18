@@ -57,26 +57,23 @@ let COMPOSANT = [
   styleUrls: ['./app/css/email.css']
 })
 export class HelloComponent {
-  public hello: string;
-  public evitTitle = '<h1>Test</h1>';
+
   public archives: any;
   public composants: any;
   public simpleDrop: any = null;
   private url: SafeResourceUrl;
 
-  private bool: boolean = true;
-  private walou: string;
   private text:string = "";
 
   private receivedData: Array<any> = [];
   private completeEmail: any;
 
   constructor(private sanitizer: DomSanitizer, private emailStructure: TemplateEmail) {
-    this.hello = 'Hello World!';
+
     this.archives = this.getArchives();
     this.composants = this.getComposant();
     this.sendUrl('');
-    this.text = ''+this.getFileContent('canvas.html');
+
 
   }
   transferDataSuccess($event: any) {
@@ -84,11 +81,19 @@ export class HelloComponent {
     this.emailStructure.distructure($event.dragData);
     this.completeEmail = this.emailStructure.structure();
 
-    this.aceContain(this.getFileContent($event.dragData));
+    //this.aceContain(this.getFileContent($event.dragData));
+    console.log("received template email",this.receivedData);
+    this.receivedData.forEach(e => {this.text += this.getFileContent(e)});
   }
-  aceContain(text: String): void{
-    this.text += text;
-  }
+  // aceContain(text: String): void{
+  //   //this.text += text;
+  // }
+  // aceTextContain(arr: Array<String> = []): String{
+  //   if( arr.length <= 1){
+  //     return this.getFileContent(arr[0]);
+  //   }
+  //   return `${this.getFileContent(arr[0])}  ${this.aceTextContain(arr.slice(0))}` ;
+  // }
   getFileContent(file: String): String{
     var rawFile = new XMLHttpRequest();
     var link = './app/template/'+file;
@@ -116,7 +121,7 @@ export class HelloComponent {
   onSelect(data: any): void {
     console.log('Archive: \n/', data);
     this.sendUrl(data.preview);
-    //this.walou = data.edit;
+
 
   }
   sendUrl(link: string): void {

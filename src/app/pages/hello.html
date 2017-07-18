@@ -11,13 +11,13 @@
         <div class="list-group" dnd-droppable (onDropSuccess)="transferDataSuccess($event)" >
           <h1>Place to Drop</h1>
           <p>{{completeEmail}}</p>
-          <div [hidden]="!receivedData.length > 0" *ngFor="let data of receivedData">the link is {{data | json}}</div>
+          <div class="list-group-item" [hidden]="!receivedData.length > 0" *ngFor="let data of receivedData" >the link is {{data | json}}</div>
         </div>
         <!-- <div [innerHTML]="evitTitle"></div>
         <p myFirst Drag>Color This</p> -->
         <!-- <iframe *ngIf="bool"  [src]="url" width="100%" height="400px" style="border: 2px solid red;"></iframe> -->
         <div *ngIf="!bool" ace-editor [(text)]="text" style="width: 100%; height: 400px;" [theme]="'GitHub'"></div>
-        <iframe *ngIf="bool" [srcdoc]="text"  width="100%" height="400px" style="border: 2px dashed green;"></iframe>
+        <iframe id="iframe" *ngIf="bool" [srcdoc]="text"  width="100%" height="400px" style="border: 2px dashed green;"></iframe>
         <!-- <div *ngIf="bool" [innerHTML]="text" width="100%" height="400px" style="border: 2px dashed green;"></div> -->
 
         <button *ngIf="!bool" (click)="bool = !bool" type="button" name="button" class="float-right">Preview</button>
